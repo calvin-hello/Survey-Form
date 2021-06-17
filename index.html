@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Survey Form</title>
+        <meta charset="UTF-8">
+    </head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <style>
+        #form{
+            margin-left:25%;
+            margin-right:25%;
+            background-color: cornflowerblue;
+            
+            font-family: Merriweather, serif;
+        }
+        .info{
+            padding-top:15px;
+            padding-bottom:5px;
+            padding-left:15px;
+        }
+        .form_input{
+            width:93%;
+            padding:10px;
+            font-size:17px;
+        }
+        h1{
+            text-align:center;
+            padding-top:20px;
+            color: white;
+        }
+        body{
+            background: linear-gradient(25deg, cyan, magenta, purple, yellow );
+            width: 95vw;
+            
+        }
+        #but-in[type="submit"]{
+            width: 60%;
+            padding: 8px;
+            margin-left:20%;
+            margin-bottom:15px;
+            border: 1px solid beige;
+            font-size:20px;
+            font-family: Montserrat;
+            cursor: pointer;
+        }
+        #but-in[type="submit"]:hover{
+            background-color:lightgreen;
+            transform: scale(1);
+            border-radius: 30px;
+        }
+        .lab{
+            margin-bottom:10px;
+        }
+        
+       
+        
+    </style>
+    <body>
+        <div id="form">
+            <header>
+                <h1>SURVEY</h1>
+            </header>
+
+        <main>
+            <form action="https://formspree.io/f/mjvjwgyk" method="POST">
+                <div class="info">
+                    <div class="lab">
+                        <label>Name</label>
+                    </div>
+                    <input class="form_input" type="text" name="_name" placeholder="Enter your name" required><br>
+                </div><hr>  
+
+                <div class="info">
+                    <div class="lab">
+                        <label>Student number</label>
+                    </div>
+                    <input class="form_input" type="number"name="student_number" placeholder="Student number" required><br>
+                </div><hr>
+
+                <div class="info">
+                    <div class="lab">
+                        <label>Email</label>
+                    </div>
+                    <input class="form_input" type="email" name="_replyto" placeholder="Enter your school email" required><br>
+                </div><hr>
+                
+                <div class="info">
+                    <div class="lab">
+                        <label class="lab">Age (optional)</label>
+                    </div>
+                    <input class="form_input" type="text" name="age" placeholder="age"><br>
+                </div><hr>
+
+                <div class="info">
+                    <div class="lab">
+                        <label>Which option best describes your role?</label>
+                    </div>
+                    <div>
+                        <input class="form_input" list="role-list" type="text" name="role" required>
+                        <datalist id="role-list">
+                            <option value="Staff"></option>
+                            <option value="Student"></option>
+                            <option value="Administrator"></option>
+                            <option value="Principal"></option>
+                        </datalist>
+                    </div>
+                </div><hr>
+
+                <div class="info">
+                    <div class="lab">
+                        <label>Which option best describes your grade? (Mandatory for students)</label>
+                    </div>
+                    <div>
+                        <input class="form_input" list="grade-list" type="text" name="grade">
+                        <datalist id="grade-list">
+                            <option value="Grade 12"></option>
+                            <option value="Grade 11"></option>
+                            <option value="Grade 10"></option>
+                            <option value="Grade 9"></option>
+                            <option value="Grade 8"></option>
+                        </datalist>
+                    </div>
+                </div><hr>
+                
+                <div class="info">
+                    <div class="lab">
+                        <label>Would you recommend our school instructions to a friend?</label>
+                    </div>
+                    <label for="definately">
+                        <input id="definately" value="definately" type="radio" name="recommendation" checked>Definately
+                    </label><br>
+
+                    <label for="maybe">
+                        <input id="maybe" value="maybe" type="radio" name="recommendation" checked>Maybe
+                    </label><br>
+
+                    <label for="not_sure">
+                        <input id="not_sure" value="not_sure" type="radio" name="recommendation" checked>Not sure
+                    </label><br>
+
+                    <label for="no">
+                        <input id="no" value="no" type="radio" name="recommendation" checked>No
+                    </label><br>
+                </div><hr>
+                
+                <div class="info">
+                    <div class="lab">
+                        <label>What would you like to see improved? (check all that apply)</label>
+                    </div>
+                    <label for="tech">
+                        <input id="tech" value="tech" type="checkbox" name="improvement" checked>Technology (higher speed computers)
+                    </label><br>
+
+                    <label for="books">
+                        <input id="books" value="books" type="checkbox" name="improvement" checked>New textbooks
+                    </label><br>
+                    
+                    <label for="mainte.">
+                        <input id="mainte." value="mainte." type="checkbox" name="improvement" checked>Washrooms maintenance / repairs (new stalls, repainted and clean.)
+                    </label><br>
+
+                    <label for="relation">
+                        <input id="relation" value="relation" type="checkbox" name="improvement" checked>Friendly teacher-student-relation
+                    </label><br>
+
+                    <label for="course">
+                        <input id="course" value="course" type="checkbox" name="improvement" checked>Course diversity (more applied skills course.)
+                    </label><br>
+                </div><hr>
+                
+                <button id="but-in" type="submit" access="b">submit</button>
+            </form>
+        </main>
+        </div>
+
+        <!--PHP code to make survey response submit to email.-->
+        
+    </body>
+</html>
